@@ -1,0 +1,11 @@
+# Arquivos do IntelliJ
+.idea/
+*.iml
+
+# Pastas de compilacao do Java
+out/
+target/
+
+# Arquivo de banco de dados do inventario (Dados Sensiveis)
+inventario_rede.csv
+*.csv
