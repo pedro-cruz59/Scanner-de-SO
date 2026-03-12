@@ -140,7 +140,7 @@ public class NetworkScanner {
         // Finaliza as threads e aguarda até 15 minutos para concluir tudo
         executor.shutdown();
         try {
-            executor.awaitTermination(15, TimeUnit.MINUTES);
+            executor.awaitTermination(1, TimeUnit.HOURS);
         } catch (InterruptedException e) {
             executor.shutdownNow();
         }
