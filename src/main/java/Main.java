@@ -1,7 +1,7 @@
 // Versão 1.01 do Scanner de Inventário
 // Licença: AGNPL (Affero General Public License)
 // Crédito: Pedro Henrique Gontijo da Cruz
-// Repositório: https://github.com/pedro-cruz59/Scanner-de-SOs
+// Repositório: https://github.com/pedro-cruz59/Scanner-de-SO
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
