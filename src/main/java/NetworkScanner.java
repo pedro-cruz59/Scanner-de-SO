@@ -253,7 +253,7 @@ public class NetworkScanner {
             if (so.contains("Windows 11")) soFinal = "Windows 11";
             else if (so.contains("Windows 10")) soFinal = "Windows 10";
             else if (so.contains("Server")) soFinal = "Windows Server";
-
+            else if (so.contains("Windows 7")) soFinal = "Windows 7";
             return soFinal + "|" + nomeReal;
 
         } catch (Exception e) {
