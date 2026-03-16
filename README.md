@@ -1,7 +1,7 @@
-Scanner de Inventário de Rede Universal (V2.0)
+Scanner de Inventário de Rede Universal
 Sistema robusto para auditoria e mapeamento de ativos em infraestruturas de rede, desenvolvido em linguagem Java. A ferramenta realiza varreduras multithread de alta performance para a identificação de sistemas operacionais e dispositivos periféricos.
 
-1. Visão Geral da Versão 2.0
+1. Visão Geral da Versão
 A segunda geração do software introduz uma arquitetura mais flexível e uma interface de usuário otimizada:
 
 Interface Gráfica (GUI): Implementação baseada na biblioteca FlatLaf, proporcionando um ambiente de trabalho moderno e responsivo.
@@ -38,9 +38,6 @@ Bibliotecas Inclusas: FlatLaf (UI) e JSch (SSH Protocol).
 Verifique a instalação do Java 17 no sistema de destino.
 
 Obtenha a versão estável do executável através da seção de Releases deste repositório.
-
-Execute o arquivo via interface do sistema operacional ou através do terminal utilizando o comando:
-java -jar Scanner-de-SO.jar
 
 5. Licença e Autoria
 Este software é distribuído sob a licença AGPL-3.0.
