@@ -1,49 +1,48 @@
-Scanner de Inventário de Rede (V1.01)
-Ferramenta de auditoria de rede desenvolvida em Java para identificação e mapeamento de ativos. O sistema utiliza protocolos de comunicação remota e varredura de portas para catalogar o parque tecnológico.
+Scanner de Inventário de Rede Universal (V2.0)
+Sistema robusto para auditoria e mapeamento de ativos em infraestruturas de rede, desenvolvido em linguagem Java. A ferramenta realiza varreduras multithread de alta performance para a identificação de sistemas operacionais e dispositivos periféricos.
 
-Descrição Técnica
-O software opera através de varredura multithread, permitindo a análise de múltiplos endereços IP em paralelo. A identificação dos sistemas operacionais é baseada em uma lógica de triagem por portas de serviço (TCP) e consultas via protocolos de gerenciamento (WMI e SSH).
+1. Visão Geral da Versão 2.0
+A segunda geração do software introduz uma arquitetura mais flexível e uma interface de usuário otimizada:
 
-Funcionalidades Implementadas
-Varredura Parametrizada: Entrada dinâmica para definição de rede base e ranges de sub-redes (terceiro octeto).
+Interface Gráfica (GUI): Implementação baseada na biblioteca FlatLaf, proporcionando um ambiente de trabalho moderno e responsivo.
 
-Triagem de Ativos:
+Scanner Universal: Capacidade de configuração dinâmica de octetos, permitindo a varredura em qualquer segmento de rede IP.
 
-Identificação Windows: Consulta via WMIC para extração da versão do SO e hostname real.
+Console de Log em Tempo Real: Terminal integrado para monitoramento detalhado dos processos de varredura e identificação.
 
-Identificação Linux: Acesso via JSch (SSH) para leitura de arquivos de configuração do sistema (/etc/hostname).
+Indicadores de Progresso: Monitoramento visual do status da operação através de barras de progresso vinculadas à execução das threads.
 
-Identificação de Periféricos: Detecção de impressoras via porta TCP 9100.
+2. Especificações Técnicas
+2.1 Metodologia de Detecção
+O motor de escaneamento opera através de uma lógica de triagem baseada em serviços e protocolos padrão:
 
-Persistência de Dados: Gerenciamento de arquivo CSV com lógica de atualização (Update) baseada no Hostname, evitando a duplicidade de registros para o mesmo ativo.
+Ambiente Windows: Extração de metadados (versão do SO e Hostname) via protocolo WMI (Windows Management Instrumentation).
 
-Segurança de Credenciais: Uso da classe java.io.Console para captura de senhas sem eco no terminal.
+Ambiente Linux: Autenticação e coleta de informações via JSch (Secure Shell).
 
-Requisitos de Sistema
+Dispositivos de Impressão: Detecção de periféricos através do protocolo JetDirect (Porta TCP 9100).
+
+Monitoramento de Ativos Ativos: Identificação de presença em portas críticas (22, 135, 445) para mitigar falsos negativos causados por firewalls locais.
+
+2.2 Gerenciamento de Dados
+Execução Multithread: Utilização de ExecutorService para otimizar o tempo de resposta em redes de grande escala.
+
+Persistência de Relatórios: Exportação automatizada para formato CSV, incluindo lógica de sanitização de dados e prevenção de registros duplicados por hostname.
+
+3. Requisitos do Sistema
 Ambiente de Execução: Java Runtime Environment (JRE) 17 ou superior.
 
-Dependências: Biblioteca JSch para suporte ao protocolo SSH.
+Bibliotecas Inclusas: FlatLaf (UI) e JSch (SSH Protocol).
 
-Configuração de Rede:
+4. Instruções de Instalação e Uso
+Verifique a instalação do Java 17 no sistema de destino.
 
-Serviço WMI habilitado para inventário Windows.
+Obtenha a versão estável do executável através da seção de Releases deste repositório.
 
-Serviço SSH ativo para inventário Linux.
+Execute o arquivo via interface do sistema operacional ou através do terminal utilizando o comando:
+java -jar Scanner-de-SO.jar
 
-Permissões de administrador para as credenciais fornecidas.
+5. Licença e Autoria
+Este software é distribuído sob a licença AGPL-3.0.
 
-Como Utilizar
-Compilação: Certifique-se de que a biblioteca JSch está no classpath.
-
-Execução: Inicie a classe Main.
-
-Configuração: Informe a base do IP (ex: 192.168), o range inicial/final do terceiro octeto e as credenciais de acesso.
-
-Saída: Os dados serão consolidados no arquivo inventario_rede.csv na mesma pasta do executável.
-
-Estrutura de Classes
-Main.java: Interface de linha de comando e controle de fluxo.
-
-NetworkScanner.java: Motor de varredura, gerenciamento de threads e execução de protocolos.
-
-DatabaseManager.java: Manipulação de I/O de arquivos e lógica de integridade do CSV.
+Desenvolvedor Responsável: Pedro Henrique Gontijo da Cruz
