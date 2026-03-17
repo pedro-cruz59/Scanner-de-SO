@@ -122,7 +122,7 @@ public class NetworkScanner {
 
         executor.shutdown();
         try {
-            executor.awaitTermination(15, TimeUnit.MINUTES);
+            executor.awaitTermination(2, TimeUnit.HOURS);
         } catch (InterruptedException e) {
             executor.shutdownNow();
         }
