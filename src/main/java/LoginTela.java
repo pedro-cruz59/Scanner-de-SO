@@ -14,7 +14,6 @@ public class LoginTela extends JFrame {
     private String rangeStr;
     private boolean[] flags;
 
-    // Construtor atualizado para receber o Prefixo IP universal
     public LoginTela(String baseIp, String rangeStr, boolean[] flags) {
         this.baseIp = baseIp;
         this.rangeStr = rangeStr;
