@@ -10,7 +10,7 @@ public class BookEditor {
     private JFrame frame;
 
     public BookEditor() {
-        frame = new JFrame("Scanner de SO - Engenharia de Infraestrutura");
+        frame = new JFrame("Scanner de Rede - Engenharia de Infraestrutura");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel(new GridBagLayout());
